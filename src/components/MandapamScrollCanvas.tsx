@@ -243,18 +243,20 @@ export const MandapamScrollCanvas: React.FC<MandapamScrollCanvasProps> = () => {
                 transition={{ duration: 0.6 }}
                 style={{ textAlign: 'center', padding: '0 2rem' }}
               >
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--gold-primary)', marginBottom: '0.5rem' }}>
-                  <Sparkles size={20} />
-                  <span style={{ fontFamily: 'var(--font-heading)', letterSpacing: '0.2em', fontSize: '0.85rem' }}>
-                    ROYAL MANDAPAM
+                <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem', color: 'var(--gold-primary)', marginBottom: '0.5rem' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <Sparkles size={18} />
+                    <span style={{ fontFamily: 'var(--font-heading)', letterSpacing: '0.15em', fontSize: '0.9rem' }}>
+                      || ॐ श्री गणेशाय नमः ||
+                    </span>
+                    <Sparkles size={18} />
+                  </div>
+                  <span style={{ fontSize: '0.8rem', letterSpacing: '0.15em', color: 'var(--gold-light)', opacity: 0.9 }}>
+                    || Om Shree Ganeshaya Namaha ||
                   </span>
-                  <Sparkles size={20} />
                 </div>
-                <div className="script-font gold-text" style={{ fontSize: '3.5rem', lineHeight: 1.2 }}>
-                  Welcome to All
-                </div>
-                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.2rem', color: 'var(--gold-light)', letterSpacing: '0.15em', marginTop: '0.5rem' }}>
-                  A HEARTFELT WELCOME TO OUR CELEBRATION
+                <div className="script-font" style={{ fontSize: '3rem', color: 'var(--gold-light)' }}>
+                  Two Hearts, One Eternal Promise
                 </div>
               </motion.div>
             )}
