@@ -13,13 +13,8 @@ export const WeddingIntro: React.FC = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <div className="section-subtitle" style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem', alignItems: 'center' }}>
-          <span>|| ॐ श्री गणेशाय नमः ||</span>
-          <span style={{ fontSize: '0.9rem', letterSpacing: '0.15em', opacity: 0.9 }}>
-            || Om Shree Ganeshaya Namaha ||
-          </span>
-        </div>
-        <h2 className="section-main-title gold-text" style={{ fontSize: '2.2rem', marginBottom: '1.5rem', marginTop: '0.5rem' }}>
+        <div className="section-subtitle">Divine Blessings</div>
+        <h2 className="section-main-title gold-text" style={{ fontSize: '2.2rem', marginBottom: '1.5rem' }}>
           Shubham Bhavatu
         </h2>
 
