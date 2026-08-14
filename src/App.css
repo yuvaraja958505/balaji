@@ -1,0 +1,921 @@
+/* App.css - Mobile Responsive & Cinematic Styling */
+
+.wedding-app {
+  position: relative;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Floating Audio Control Button */
+.audio-control-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7), var(--gold-glow);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.audio-control-btn:hover {
+  transform: scale(1.1);
+  background: var(--gold-gradient);
+  color: var(--text-dark);
+}
+
+/* Hero Sticky Container 1 (Gate Opening) */
+.hero-scroll-container {
+  height: 450vh;
+  position: relative;
+}
+
+.hero-sticky-view {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gate-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Sticky Container 2 (Mandapam Walk Sequence) */
+.mandapam-scroll-container {
+  height: 400vh;
+  position: relative;
+}
+
+.mandapam-sticky-view {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mandapam-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mandapam-reveal-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Memories Photobook Section */
+.memories-scroll-container {
+  height: 350vh;
+  position: relative;
+}
+
+.memories-sticky-view {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1rem 1.5rem;
+  background: radial-gradient(circle at center, #1f0a12 0%, #0d0406 80%);
+  box-sizing: border-box;
+}
+
+.memories-header {
+  text-align: center;
+  width: 100%;
+  z-index: 20;
+  flex-shrink: 0;
+}
+
+.memories-header-subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gold-primary);
+  font-family: var(--font-heading);
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+}
+
+.memories-header-title {
+  font-size: 2.2rem;
+  margin-top: 0.2rem;
+}
+
+.photobook-stage {
+  width: 90%;
+  max-width: 950px;
+  flex: 1;
+  max-height: 520px;
+  min-height: 360px;
+  perspective: 1400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.album-spread {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: #fcfaf7;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(230, 200, 117, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.album-page {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #fdfbf7;
+}
+
+.cover-page {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2a0b12 0%, #160609 100%);
+  border: 2px solid var(--border-gold-glow);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+}
+
+.album-cover-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.album-cover-title {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.album-cover-couple {
+  font-family: var(--font-heading);
+  color: var(--gold-light);
+  letter-spacing: 0.2em;
+  margin-top: 1.25rem;
+  font-size: 1.1rem;
+}
+
+.album-cover-subtitle {
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.album-cover-btn {
+  margin-top: 1.75rem;
+}
+
+.album-ring-binder {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 24px;
+  transform: translateX(-50%);
+  background: repeating-linear-gradient(
+    180deg,
+    #b8860b 0px,
+    #e6c875 4px,
+    #b8860b 8px,
+    transparent 8px,
+    transparent 18px
+  );
+  z-index: 20;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.polaroid-frame {
+  background: #ffffff;
+  padding: 0.85rem 0.85rem 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  max-width: 95%;
+  width: 100%;
+}
+
+.polaroid-frame:hover {
+  transform: rotate(0deg) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.photo-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  background: #111;
+}
+
+.polaroid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.polaroid-frame:hover .polaroid-img {
+  transform: scale(1.06);
+}
+
+.photo-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.polaroid-frame:hover .photo-hover-overlay {
+  opacity: 1;
+}
+
+.polaroid-caption {
+  margin-top: 0.75rem;
+  font-size: 1.35rem;
+  color: #2b1704;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.tape-top-left {
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  width: 60px;
+  height: 20px;
+  background: rgba(230, 200, 117, 0.5);
+  transform: rotate(-12deg);
+  backdrop-filter: blur(4px);
+}
+
+.tape-top-right {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  width: 60px;
+  height: 20px;
+  background: rgba(230, 200, 117, 0.5);
+  transform: rotate(10deg);
+  backdrop-filter: blur(4px);
+}
+
+.empty-page-placeholder {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+}
+
+.book-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  z-index: 30;
+  flex-shrink: 0;
+}
+
+.book-controls button {
+  padding: 0.5rem 1rem;
+}
+
+.page-counter {
+  color: var(--gold-light);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+}
+
+.photo-lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 16px;
+  border: 2px solid var(--border-gold-glow);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Light Overlay & Petals Layer */
+.cinematic-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(230, 200, 117, 0.12) 0%, rgba(13, 4, 6, 0.4) 60%, rgba(13, 4, 6, 0.8) 100%);
+  z-index: 2;
+}
+
+.vignette-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 120px rgba(13, 4, 6, 0.85);
+  z-index: 3;
+}
+
+/* Hero Reveal Text Content */
+.hero-reveal-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+  padding: 1.5rem;
+  pointer-events: none;
+}
+
+.hero-reveal-content.active {
+  pointer-events: auto;
+}
+
+.wedding-pre-title {
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.wedding-main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 7.5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 20px rgba(230, 200, 117, 0.4);
+}
+
+.wedding-dates-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.8rem;
+  border-radius: 40px;
+  background: rgba(22, 7, 10, 0.85);
+  border: 1px solid var(--border-gold-glow);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8), var(--gold-glow);
+  font-family: var(--font-heading);
+  font-size: clamp(0.9rem, 3.5vw, 1.4rem);
+  letter-spacing: 0.15em;
+  color: var(--gold-primary);
+  backdrop-filter: blur(12px);
+}
+
+.scroll-indicator-btn {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--gold-light);
+  font-family: var(--font-heading);
+  font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: pulseBounce 2s infinite;
+  cursor: pointer;
+}
+
+@keyframes pulseBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.8; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+
+/* Preloader Screen */
+.preloader-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.preloader-mandapam-icon {
+  font-size: 3.5rem;
+  color: var(--gold-primary);
+  margin-bottom: 1.5rem;
+  animation: floatLight 3s ease-in-out infinite;
+}
+
+@keyframes floatLight {
+  0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 10px rgba(230, 200, 117, 0.4)); }
+  50% { transform: translateY(-10px); filter: drop-shadow(0 0 25px rgba(230, 200, 117, 0.8)); }
+}
+
+.preloader-progress-bar {
+  width: 240px;
+  height: 6px;
+  background: rgba(230, 200, 117, 0.15);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 1.5rem 0 1rem;
+}
+
+.preloader-progress-fill {
+  height: 100%;
+  background: var(--gold-gradient);
+  transition: width 0.2s ease;
+  box-shadow: 0 0 12px var(--gold-primary);
+}
+
+/* Common Section Container */
+.wedding-section {
+  padding: 5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.section-title-wrapper {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-subtitle {
+  font-family: var(--font-script);
+  font-size: clamp(1.8rem, 4.5vw, 2.2rem);
+  color: var(--gold-light);
+  margin-bottom: 0.2rem;
+}
+
+.section-main-title {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.section-main-title::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 2px;
+  background: var(--gold-gradient);
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+}
+
+/* Couple Story Cards */
+.couple-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.couple-card {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.couple-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 1.25rem;
+  border: 2px solid var(--gold-primary);
+  box-shadow: var(--gold-glow);
+  object-fit: cover;
+  background: var(--bg-maroon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  color: var(--gold-primary);
+  overflow: hidden;
+}
+
+.couple-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.couple-name {
+  font-size: 1.8rem;
+  font-family: var(--font-heading);
+  color: var(--gold-light);
+  margin-bottom: 0.4rem;
+}
+
+.couple-role {
+  font-family: var(--font-script);
+  font-size: 1.4rem;
+  color: var(--gold-dark);
+  margin-bottom: 0.85rem;
+}
+
+.couple-bio {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Events Cards */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.event-card {
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.event-badge {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  background: rgba(139, 21, 36, 0.6);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-light);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+}
+
+.event-name {
+  font-size: 1.6rem;
+  color: var(--gold-primary);
+  margin-bottom: 0.85rem;
+}
+
+.event-detail-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Countdown Timer */
+.countdown-box {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  margin: 2.5rem 0;
+  flex-wrap: wrap;
+}
+
+.countdown-unit {
+  min-width: 75px;
+  padding: 0.9rem 0.6rem;
+  text-align: center;
+  background: rgba(22, 7, 10, 0.85);
+  border: 1px solid var(--border-gold);
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.countdown-number {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  line-height: 1;
+}
+
+.countdown-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+}
+
+/* Photo Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.gallery-item {
+  height: 250px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.08);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13, 4, 6, 0.85) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* RSVP Form */
+.rsvp-form-card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: rgba(13, 4, 6, 0.7);
+  border: 1px solid var(--border-gold);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--gold-light);
+  box-shadow: 0 0 15px rgba(230, 200, 117, 0.25);
+}
+
+/* Footer */
+.wedding-footer {
+  border-top: 1px solid var(--border-gold);
+  padding: 3rem 1.5rem 2.5rem;
+  text-align: center;
+  background: var(--bg-deep);
+  position: relative;
+  z-index: 10;
+}
+
+/* MOBILE RESPONSIVE MEDIA QUERIES */
+@media (max-width: 768px) {
+  .hero-scroll-container {
+    height: 360vh;
+  }
+  .mandapam-scroll-container {
+    height: 320vh;
+  }
+  .memories-scroll-container {
+    height: 320vh;
+  }
+  
+  .audio-control-btn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 44px;
+    height: 44px;
+  }
+
+  .memories-sticky-view {
+    padding: 0.6rem 0.5rem 1rem;
+  }
+
+  .memories-header-subtitle {
+    font-size: 0.75rem;
+    gap: 0.35rem;
+  }
+
+  .memories-header-title {
+    font-size: 1.5rem;
+    margin-top: 0.1rem;
+  }
+
+  .photobook-stage {
+    width: 96%;
+    max-width: 450px;
+    flex: 1;
+    min-height: 0;
+    margin: 0.25rem 0;
+  }
+
+  .album-spread {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .cover-page {
+    padding: 1.25rem 0.85rem;
+  }
+
+  .album-cover-title {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .album-cover-couple {
+    margin-top: 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  .album-cover-subtitle {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .album-cover-btn {
+    margin-top: 1.25rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .album-ring-binder {
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 12px;
+    transform: translateY(-50%);
+    background: repeating-linear-gradient(
+      90deg,
+      #b8860b 0px,
+      #e6c875 4px,
+      #b8860b 8px,
+      transparent 8px,
+      transparent 18px
+    );
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  .album-page {
+    padding: 0.5rem 0.6rem;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .polaroid-frame {
+    padding: 0.4rem 0.4rem 0.5rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .photo-container {
+    height: clamp(110px, 20vh, 160px);
+  }
+
+  .polaroid-caption {
+    margin-top: 0.3rem;
+    font-size: 1.05rem;
+    line-height: 1.15;
+  }
+
+  .tape-top-left, .tape-top-right {
+    width: 40px;
+    height: 14px;
+    top: -6px;
+  }
+
+  .book-controls {
+    gap: 0.75rem;
+    padding-bottom: 0.2rem;
+  }
+
+  .book-controls button {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .page-counter {
+    font-size: 0.8rem;
+  }
+
+  .wedding-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .gallery-item {
+    height: 180px;
+  }
+}

@@ -1,0 +1,191 @@
+:root {
+  --font-heading: 'Cinzel', serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-body: 'Cormorant Garamond', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  /* Royal South Indian Wedding Palette */
+  --bg-dark: #0d0406;
+  --bg-deep: #16070a;
+  --bg-maroon: #260a10;
+  --bg-card: rgba(30, 10, 16, 0.85);
+
+  --gold-primary: #e6c875;
+  --gold-light: #fef1cc;
+  --gold-dark: #b8860b;
+  --gold-gradient: linear-gradient(135deg, #fef1cc 0%, #e6c875 40%, #b8860b 80%, #fef1cc 100%);
+  --gold-glow: 0 0 30px rgba(230, 200, 117, 0.35);
+
+  --maroon-rich: #6b0f1a;
+  --maroon-accent: #8b1524;
+  --crimson-glow: rgba(139, 21, 36, 0.5);
+
+  --text-primary: #fefbf4;
+  --text-gold: #e6c875;
+  --text-muted: #c5b49e;
+  --text-dark: #1a080c;
+
+  --border-gold: rgba(230, 200, 117, 0.25);
+  --border-gold-glow: rgba(230, 200, 117, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .heading-font {
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.script-font {
+  font-family: var(--font-script);
+}
+
+/* Gold Gradient Text */
+.gold-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glassmorphic Royal Cards */
+.royal-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-gold);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(230, 200, 117, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.royal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold-gradient);
+  opacity: 0.7;
+}
+
+.royal-card:hover {
+  border-color: var(--border-gold-glow);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), var(--gold-glow);
+  transform: translateY(-4px);
+}
+
+/* Luxury Ornate Border Frame */
+.ornate-border {
+  position: relative;
+  padding: 2.5rem;
+}
+
+.ornate-border::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(230, 200, 117, 0.2);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .ornate-border {
+    padding: 1.5rem 1rem;
+  }
+  .ornate-border::after {
+    inset: 6px;
+  }
+}
+
+/* Buttons */
+.btn-gold {
+  background: var(--gold-gradient);
+  color: var(--text-dark);
+  border: none;
+  padding: 0.9rem 2.2rem;
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(230, 200, 117, 0.3);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-gold:hover, .btn-gold:active {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(230, 200, 117, 0.5);
+  filter: brightness(1.1);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--gold-primary);
+  border: 1px solid var(--gold-primary);
+  padding: 0.85rem 2rem;
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-outline-gold:hover, .btn-outline-gold:active {
+  background: rgba(230, 200, 117, 0.15);
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--maroon-accent);
+  border: 1px solid var(--gold-dark);
+  border-radius: 4px;
+}
