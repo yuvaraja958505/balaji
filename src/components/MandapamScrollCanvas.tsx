@@ -213,34 +213,70 @@ export const MandapamScrollCanvas: React.FC<MandapamScrollCanvasProps> = () => {
         <div className="cinematic-overlay" style={{ opacity: 0.35 }} />
         <div className="vignette-layer" />
 
-        {/* Dynamic Story Overlay Content */}
+        {/* Dynamic Story Quotes based on scroll progress */}
         <div className="mandapam-reveal-content">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            style={{ textAlign: 'center', padding: '0 1.5rem', maxWidth: '850px', margin: '0 auto' }}
-          >
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', color: 'var(--gold-primary)', marginBottom: '0.75rem' }}>
-              <Sparkles size={22} />
-              <span style={{ fontFamily: 'var(--font-heading)', letterSpacing: '0.25em', fontSize: '0.95rem', textTransform: 'uppercase' }}>
-                ROYAL WEDDING CELEBRATION
-              </span>
-              <Sparkles size={22} />
-            </div>
+          <AnimatePresence mode="wait">
+            {scrollProgress < 0.35 && (
+              <motion.div 
+                key="phase1"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.6 }}
+                style={{ textAlign: 'center', padding: '0 2rem' }}
+              >
+                <div className="script-font gold-text" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>
+                  The Journey Within
+                </div>
+                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.4rem', color: 'var(--text-primary)', letterSpacing: '0.1em' }}>
+                  STEPPING INTO THE SACRED MANDAPAM
+                </div>
+              </motion.div>
+            )}
 
-            <h1 className="script-font gold-text" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.2rem)', lineHeight: 1.15, marginBottom: '0.5rem', filter: 'drop-shadow(0 4px 15px rgba(0,0,0,0.85))' }}>
-              A Warm & Heartfelt Welcome To All
-            </h1>
+            {scrollProgress >= 0.35 && scrollProgress < 0.7 && (
+              <motion.div 
+                key="phase2"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.05 }}
+                transition={{ duration: 0.6 }}
+                style={{ textAlign: 'center', padding: '0 2rem' }}
+              >
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--gold-primary)', marginBottom: '0.5rem' }}>
+                  <Sparkles size={20} />
+                  <span style={{ fontFamily: 'var(--font-heading)', letterSpacing: '0.2em', fontSize: '0.85rem' }}>
+                    ROYAL MANDAPAM
+                  </span>
+                  <Sparkles size={20} />
+                </div>
+                <div className="script-font gold-text" style={{ fontSize: '3.5rem', lineHeight: 1.2 }}>
+                  Welcome to All
+                </div>
+                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.2rem', color: 'var(--gold-light)', letterSpacing: '0.15em', marginTop: '0.5rem' }}>
+                  A HEARTFELT WELCOME TO OUR CELEBRATION
+                </div>
+              </motion.div>
+            )}
 
-            <div style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.2rem, 3.5vw, 1.8rem)', color: 'var(--gold-light)', letterSpacing: '0.15em', marginTop: '1rem' }}>
-              BALAJI <Heart className="gold-text" size={24} style={{ display: 'inline', margin: '0 0.4rem', verticalAlign: 'middle', fill: 'var(--gold-primary)' }} /> SANJANA
-            </div>
-
-            <div style={{ fontStyle: 'italic', color: 'var(--text-primary)', fontSize: 'clamp(0.95rem, 2.5vw, 1.2rem)', marginTop: '0.75rem', opacity: 0.9, textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-              "With joyful hearts and cherished blessings, we welcome you to celebrate our divine union."
-            </div>
-          </motion.div>
+            {scrollProgress >= 0.7 && (
+              <motion.div 
+                key="phase3"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.7 }}
+                style={{ textAlign: 'center', padding: '0 2rem' }}
+              >
+                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.6rem', fontWeight: 800, letterSpacing: '0.12em' }} className="gold-text">
+                  BALAJI <Heart className="gold-text" size={28} style={{ display: 'inline', margin: '0 0.4rem', verticalAlign: 'middle', fill: 'var(--gold-primary)' }} /> SANJANA
+                </div>
+                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.2rem', color: 'var(--gold-light)', letterSpacing: '0.2em', marginTop: '0.5rem' }}>
+                  12 • 13 SEPTEMBER 2026
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </div>
