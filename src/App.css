@@ -993,3 +993,246 @@
     height: 180px;
   }
 }
+
+/* 3D PARALLAX INVITATION CARD SECTION */
+.invitation-parallax-section {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.parallax-card-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  perspective: 1200px;
+}
+
+.invitation-parallax-bg {
+  position: absolute;
+  inset: -30px;
+  background: radial-gradient(circle at center, rgba(230, 200, 117, 0.18) 0%, rgba(107, 15, 26, 0.25) 50%, transparent 80%);
+  border-radius: 40px;
+  filter: blur(25px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.invitation-card {
+  position: relative;
+  z-index: 2;
+  border: 2px solid var(--border-gold-glow);
+  border-radius: 28px;
+  padding: 3.5rem 2.5rem 3rem;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), var(--gold-glow);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.filigree-corner {
+  position: absolute;
+  color: var(--gold-primary);
+  font-size: 1.4rem;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.filigree-corner.top-left { top: 18px; left: 22px; }
+.filigree-corner.top-right { top: 18px; right: 22px; }
+.filigree-corner.bottom-left { bottom: 18px; left: 22px; }
+.filigree-corner.bottom-right { bottom: 18px; right: 22px; }
+
+.invitation-card-content {
+  text-align: center;
+  transform-style: preserve-3d;
+}
+
+.invitation-crest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.crest-icon {
+  filter: drop-shadow(0 0 12px rgba(230, 200, 117, 0.6));
+}
+
+.crest-line {
+  width: 60px;
+  height: 2px;
+  background: var(--gold-gradient);
+  margin-top: 0.6rem;
+  border-radius: 2px;
+}
+
+.invitation-header-script {
+  font-size: clamp(2rem, 5.5vw, 3rem);
+  margin-bottom: 0.75rem;
+}
+
+.invitation-request-text {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.invitation-couple-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.invitation-couple-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid var(--gold-primary);
+  padding: 3px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), var(--gold-glow);
+  overflow: hidden;
+  background: var(--bg-maroon);
+}
+
+.invitation-couple-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.invitation-couple-names {
+  text-align: center;
+}
+
+.invitation-groom, .invitation-bride {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+}
+
+.invitation-and {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-family: var(--font-script);
+  font-size: 2rem;
+  color: var(--gold-light);
+  margin: 0.2rem 0;
+}
+
+.heart-pulse {
+  animation: heartPulseAnim 2s infinite ease-in-out;
+}
+
+@keyframes heartPulseAnim {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.invitation-gold-divider {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--gold-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+  letter-spacing: 0.2em;
+  margin-bottom: 2rem;
+}
+
+.invitation-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.invitation-detail-card {
+  background: rgba(38, 10, 16, 0.6);
+  border: 1px solid var(--border-gold);
+  border-radius: 16px;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(8px);
+}
+
+.detail-title {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.18em;
+  margin: 0.4rem 0 0.2rem;
+}
+
+.detail-value {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--gold-light);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.invitation-venue-box {
+  background: rgba(22, 7, 10, 0.8);
+  border: 1px solid var(--border-gold-glow);
+  border-radius: 18px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+}
+
+.venue-pin {
+  flex-shrink: 0;
+}
+
+.venue-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--gold-primary);
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.venue-address {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.invitation-footer-action {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .invitation-card {
+    padding: 2.25rem 1.25rem 2rem;
+    border-radius: 20px;
+  }
+  .invitation-couple-row {
+    gap: 1rem;
+  }
+  .invitation-couple-avatar {
+    width: 70px;
+    height: 70px;
+  }
+  .invitation-venue-box {
+    flex-direction: column;
+    text-align: center;
+  }
+}

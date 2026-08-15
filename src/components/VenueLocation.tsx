@@ -3,11 +3,15 @@ import { motion } from 'framer-motion'
 import { MapPin, Navigation, Phone, Mail } from 'lucide-react'
 
 export const VenueLocation: React.FC = () => {
+  const addressQuery = encodeURIComponent(
+    'Salem - Tirupattur - Vaniyambadi Road Kalandra Post, Chinnakallupalli, Vaniyambadi, Tamil Nadu 635751, India'
+  )
+
   return (
     <section className="wedding-section">
       <div className="section-title-wrapper">
         <div className="section-subtitle">Venue & Location</div>
-        <h2 className="section-main-title gold-text">The Royal Palace Mandapam</h2>
+        <h2 className="section-main-title gold-text">Royal Wedding Venue</h2>
       </div>
 
       <motion.div 
@@ -20,14 +24,15 @@ export const VenueLocation: React.FC = () => {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem', alignItems: 'center' }}>
           <div>
             <h3 style={{ fontSize: '1.8rem', color: 'var(--gold-primary)', fontFamily: 'var(--font-heading)', marginBottom: '1rem' }}>
-              Royal Palace Gardens & Mandapam
+              Chinnakallupalli Mandapam
             </h3>
             
-            <div style={{ display: 'flex', gap: '0.8rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>
-              <MapPin size={22} color="var(--gold-primary)" style={{ flexShrink: 0 }} />
+            <div style={{ display: 'flex', gap: '0.8rem', marginBottom: '1.25rem', color: 'var(--text-primary)', lineHeight: 1.6 }}>
+              <MapPin size={22} color="var(--gold-primary)" style={{ flexShrink: 0, marginTop: '4px' }} />
               <div>
-                100 Palace Road, Grand Heritage Enclave,<br />
-                Bengaluru / Chennai, South India
+                <strong>Salem - Tirupattur - Vaniyambadi Road</strong><br />
+                Kalandra Post, Chinnakallupalli,<br />
+                Vaniyambadi, Tamil Nadu 635751, India
               </div>
             </div>
 
@@ -42,16 +47,16 @@ export const VenueLocation: React.FC = () => {
             </div>
 
             <a 
-              href="https://maps.google.com" 
+              href={`https://www.google.com/maps/search/?api=1&query=${addressQuery}`} 
               target="_blank" 
               rel="noreferrer" 
               className="btn-gold"
             >
-              <Navigation size={18} /> Get Directions
+              <Navigation size={18} /> Get Google Maps Directions
             </a>
           </div>
 
-          <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border-gold)', height: '280px', background: '#1c0a10', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border-gold)', height: '300px', background: '#1c0a10', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <iframe
               title="Venue Location Map"
               width="100%"
@@ -59,7 +64,7 @@ export const VenueLocation: React.FC = () => {
               style={{ border: 0 }}
               loading="lazy"
               allowFullScreen
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9796068393664!2d77.5945627!3d12.9715987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU4JzE3LjciTiA3N8KwMzUnNDAuNCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+              src={`https://maps.google.com/maps?q=${addressQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
             />
           </div>
         </div>

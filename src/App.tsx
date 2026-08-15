@@ -6,6 +6,7 @@ import { MandapamScrollCanvas } from './components/MandapamScrollCanvas'
 import { MemoriesAlbumBook } from './components/MemoriesAlbumBook'
 import { WeddingIntro } from './components/WeddingIntro'
 import { CoupleStory } from './components/CoupleStory'
+import { InvitationCard } from './components/InvitationCard'
 import { EventsSchedule } from './components/EventsSchedule'
 import { VenueLocation } from './components/VenueLocation'
 import { PhotoGallery } from './components/PhotoGallery'
@@ -43,6 +44,7 @@ export function App() {
       {/* Wedding Content Sections */}
       <WeddingIntro />
       <CoupleStory />
+      <InvitationCard />
       <EventsSchedule />
       <PhotoGallery />
       <FamilyBlessings />
