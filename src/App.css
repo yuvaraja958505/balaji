@@ -43,8 +43,10 @@
 .hero-sticky-view {
   position: sticky;
   top: 0;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -67,8 +69,10 @@
 .mandapam-sticky-view {
   position: sticky;
   top: 0;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -90,6 +94,78 @@
   justify-content: center;
   z-index: 10;
   pointer-events: none;
+  padding: 0 1rem;
+}
+
+.mandapam-card {
+  text-align: center;
+  padding: 0 1rem;
+  max-width: 90vw;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mandapam-card-sub {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.mandapam-card-title {
+  font-family: var(--font-heading);
+  font-size: clamp(0.95rem, 3.2vw, 1.4rem);
+  color: var(--text-primary);
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+}
+
+.mandapam-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gold-primary);
+  margin-bottom: 0.5rem;
+}
+
+.mandapam-badge span {
+  font-family: var(--font-heading);
+  letter-spacing: 0.18em;
+  font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+}
+
+.mandapam-card-main-gold {
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  color: var(--gold-light);
+  line-height: 1.25;
+}
+
+.mandapam-couple-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.mandapam-heart-icon {
+  display: inline-block;
+  vertical-align: middle;
+  fill: var(--gold-primary);
+  width: clamp(20px, 4vw, 28px);
+  height: clamp(20px, 4vw, 28px);
+}
+
+.mandapam-date-text {
+  font-family: var(--font-heading);
+  font-size: clamp(0.85rem, 2.8vw, 1.2rem);
+  color: var(--gold-light);
+  letter-spacing: 0.18em;
+  margin-top: 0.5rem;
 }
 
 /* Memories Photobook Section */
@@ -101,7 +177,8 @@
 .memories-sticky-view {
   position: sticky;
   top: 0;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
@@ -788,10 +865,7 @@
   }
   
   .audio-control-btn {
-    bottom: 1.25rem;
-    right: 1.25rem;
-    width: 44px;
-    height: 44px;
+    display: none !important;
   }
 
   .memories-sticky-view {

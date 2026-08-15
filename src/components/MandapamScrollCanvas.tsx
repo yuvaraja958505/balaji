@@ -223,12 +223,12 @@ export const MandapamScrollCanvas: React.FC<MandapamScrollCanvasProps> = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.6 }}
-                style={{ textAlign: 'center', padding: '0 2rem' }}
+                className="mandapam-card"
               >
-                <div className="script-font gold-text" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>
+                <div className="script-font gold-text mandapam-card-sub">
                   The Journey Within
                 </div>
-                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.4rem', color: 'var(--text-primary)', letterSpacing: '0.1em' }}>
+                <div className="mandapam-card-title">
                   STEPPING INTO THE SACRED MANDAPAM
                 </div>
               </motion.div>
@@ -241,16 +241,14 @@ export const MandapamScrollCanvas: React.FC<MandapamScrollCanvasProps> = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.05 }}
                 transition={{ duration: 0.6 }}
-                style={{ textAlign: 'center', padding: '0 2rem' }}
+                className="mandapam-card"
               >
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--gold-primary)', marginBottom: '0.5rem' }}>
-                  <Sparkles size={20} />
-                  <span style={{ fontFamily: 'var(--font-heading)', letterSpacing: '0.2em', fontSize: '0.85rem' }}>
-                    DIVINE UNION
-                  </span>
-                  <Sparkles size={20} />
+                <div className="mandapam-badge">
+                  <Sparkles size={18} />
+                  <span>DIVINE UNION</span>
+                  <Sparkles size={18} />
                 </div>
-                <div className="script-font" style={{ fontSize: '3rem', color: 'var(--gold-light)' }}>
+                <div className="script-font mandapam-card-main-gold">
                   Two Hearts, One Eternal Promise
                 </div>
               </motion.div>
@@ -263,12 +261,14 @@ export const MandapamScrollCanvas: React.FC<MandapamScrollCanvasProps> = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.7 }}
-                style={{ textAlign: 'center', padding: '0 2rem' }}
+                className="mandapam-card"
               >
-                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.6rem', fontWeight: 800, letterSpacing: '0.12em' }} className="gold-text">
-                  BALAJI <Heart className="gold-text" size={28} style={{ display: 'inline', margin: '0 0.4rem', verticalAlign: 'middle', fill: 'var(--gold-primary)' }} /> SANJANA
+                <div className="mandapam-couple-heading gold-text">
+                  <span>BALAJI</span>
+                  <Heart className="gold-text mandapam-heart-icon" />
+                  <span>SANJANA</span>
                 </div>
-                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.2rem', color: 'var(--gold-light)', letterSpacing: '0.2em', marginTop: '0.5rem' }}>
+                <div className="mandapam-date-text">
                   12 • 13 SEPTEMBER 2026
                 </div>
               </motion.div>

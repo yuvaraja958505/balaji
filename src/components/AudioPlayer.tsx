@@ -34,6 +34,8 @@ export const AudioPlayer: React.FC = () => {
     const removeListeners = () => {
       window.removeEventListener('click', handleFirstInteraction)
       window.removeEventListener('touchstart', handleFirstInteraction)
+      window.removeEventListener('touchmove', handleFirstInteraction)
+      window.removeEventListener('pointerdown', handleFirstInteraction)
       window.removeEventListener('scroll', handleFirstInteraction)
       window.removeEventListener('keydown', handleFirstInteraction)
     }
@@ -41,11 +43,13 @@ export const AudioPlayer: React.FC = () => {
     // Try autoplay immediately
     attemptPlay()
 
-    // Attach listeners for first user gesture to fulfill browser autoplay policy
-    window.addEventListener('click', handleFirstInteraction)
-    window.addEventListener('touchstart', handleFirstInteraction)
-    window.addEventListener('scroll', handleFirstInteraction)
-    window.addEventListener('keydown', handleFirstInteraction)
+    // Attach listeners for user gesture to fulfill browser autoplay policy
+    window.addEventListener('click', handleFirstInteraction, { passive: true })
+    window.addEventListener('touchstart', handleFirstInteraction, { passive: true })
+    window.addEventListener('touchmove', handleFirstInteraction, { passive: true })
+    window.addEventListener('pointerdown', handleFirstInteraction, { passive: true })
+    window.addEventListener('scroll', handleFirstInteraction, { passive: true })
+    window.addEventListener('keydown', handleFirstInteraction, { passive: true })
 
     return () => {
       removeListeners()
