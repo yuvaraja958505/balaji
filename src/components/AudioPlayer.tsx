@@ -9,50 +9,61 @@ export const AudioPlayer: React.FC = () => {
   useEffect(() => {
     const audio = new Audio(songUrl)
     audio.loop = true
-    audio.volume = 0.5
+    audio.volume = 0.6
     audioRef.current = audio
 
-    const attemptPlay = () => {
-      audio.play().then(() => {
+    const playAudio = () => {
+      if (!audioRef.current) return
+      audioRef.current.play().then(() => {
         setIsPlaying(true)
         removeListeners()
-      }).catch((err) => {
-        console.log('Autoplay waiting for user gesture:', err)
-        setIsPlaying(false)
+      }).catch(() => {
+        // Will play on first click or gesture
       })
     }
 
-    const handleFirstInteraction = () => {
-      if (audioRef.current && audioRef.current.paused) {
-        audioRef.current.play().then(() => {
-          setIsPlaying(true)
-          removeListeners()
-        }).catch(() => {})
-      }
+    const handleUserGesture = () => {
+      playAudio()
     }
+
+    const events = [
+      'start-audio',
+      'click',
+      'touchstart',
+      'touchend',
+      'touchmove',
+      'pointerdown',
+      'pointermove',
+      'mousemove',
+      'scroll',
+      'wheel',
+      'keydown'
+    ]
 
     const removeListeners = () => {
-      window.removeEventListener('click', handleFirstInteraction)
-      window.removeEventListener('touchstart', handleFirstInteraction)
-      window.removeEventListener('touchmove', handleFirstInteraction)
-      window.removeEventListener('pointerdown', handleFirstInteraction)
-      window.removeEventListener('scroll', handleFirstInteraction)
-      window.removeEventListener('keydown', handleFirstInteraction)
+      events.forEach(evt => window.removeEventListener(evt, handleUserGesture))
     }
 
-    // Try autoplay immediately
-    attemptPlay()
+    // Attempt immediate autoplay
+    playAudio()
 
-    // Attach listeners for user gesture to fulfill browser autoplay policy
-    window.addEventListener('click', handleFirstInteraction, { passive: true })
-    window.addEventListener('touchstart', handleFirstInteraction, { passive: true })
-    window.addEventListener('touchmove', handleFirstInteraction, { passive: true })
-    window.addEventListener('pointerdown', handleFirstInteraction, { passive: true })
-    window.addEventListener('scroll', handleFirstInteraction, { passive: true })
-    window.addEventListener('keydown', handleFirstInteraction, { passive: true })
+    // Attach listeners for any window event or custom 'start-audio' event
+    events.forEach(evt => window.addEventListener(evt, handleUserGesture, { passive: true }))
+
+    // Backup polling check
+    const intervalId = setInterval(() => {
+      if (audioRef.current && audioRef.current.paused) {
+        playAudio()
+      } else if (audioRef.current && !audioRef.current.paused) {
+        setIsPlaying(true)
+        removeListeners()
+        clearInterval(intervalId)
+      }
+    }, 600)
 
     return () => {
       removeListeners()
+      clearInterval(intervalId)
       audio.pause()
       audioRef.current = null
     }
@@ -89,4 +100,3 @@ export const AudioPlayer: React.FC = () => {
     </button>
   )
 }
-
