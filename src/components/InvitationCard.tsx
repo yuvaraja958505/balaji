@@ -57,7 +57,7 @@ export const InvitationCard: React.FC = () => {
         <h2 className="section-main-title gold-text">Official Invitation Card</h2>
       </div>
 
-      <div className="parallax-card-wrapper" perspective="1200px">
+      <div className="parallax-card-wrapper" style={{ perspective: '1200px' }}>
         {/* Layer 1: Parallax Background Glow & Sparkles */}
         <motion.div 
           className="invitation-parallax-bg"
