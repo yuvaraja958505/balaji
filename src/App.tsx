@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Preloader } from './components/Preloader'
 import { AudioPlayer } from './components/AudioPlayer'
+import { CharacterReaction } from './components/CharacterReaction'
 import { GateCanvasHero } from './components/GateCanvasHero'
 import { MandapamScrollCanvas } from './components/MandapamScrollCanvas'
 import { MemoriesAlbumBook } from './components/MemoriesAlbumBook'
@@ -28,6 +29,9 @@ export function App() {
 
       {/* Floating Audio Control */}
       <AudioPlayer />
+
+      {/* Floating Left Bottom Transparent Video Character */}
+      <CharacterReaction />
 
       {/* Hero Section — 3D Gate Opening Scroll Canvas (93 frames) */}
       <GateCanvasHero 

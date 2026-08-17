@@ -994,6 +994,250 @@
   }
 }
 
+/* Venue Directions Rocket Action Button */
+.venue-action-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.25rem;
+}
+
+.venue-map-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 360px;
+  white-space: nowrap;
+  font-size: clamp(0.78rem, 3.2vw, 0.9rem);
+  padding: 0.85rem 1.4rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.rocket-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rocket-icon {
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+/* Epic Fullscreen Rocket Launch Overlay */
+.rocket-launch-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+.rocket-launch-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 4, 6, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.rocket-launch-card {
+  position: relative;
+  z-index: 10001;
+  padding: 1.8rem 2.5rem;
+  border-radius: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.95), var(--gold-glow);
+  border: 1px solid var(--border-gold-glow);
+  max-width: 92vw;
+  background: radial-gradient(circle at center, rgba(42, 14, 25, 0.95) 0%, rgba(18, 5, 10, 0.98) 100%);
+}
+
+.rocket-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(230, 200, 117, 0.12);
+  border: 1px solid var(--border-gold);
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+}
+
+.animated-sparkle {
+  animation: pulseSparkle 1.2s infinite ease-in-out alternate;
+}
+
+@keyframes pulseSparkle {
+  0% { transform: scale(0.9) rotate(0deg); opacity: 0.7; }
+  100% { transform: scale(1.25) rotate(45deg); opacity: 1; }
+}
+
+.rocket-phase-badge {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
+}
+
+.rocket-launch-text {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 3.8vw, 1.4rem);
+  letter-spacing: 0.15em;
+  font-weight: 800;
+}
+
+.rocket-launch-subtext {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* Progress bar */
+.rocket-progress-bar-bg {
+  width: 100%;
+  max-width: 280px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 0.4rem;
+  border: 1px solid rgba(230, 200, 117, 0.2);
+}
+
+.rocket-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold-primary), var(--gold-light));
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--gold-primary);
+}
+
+.epic-rocket-ship {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  z-index: 10002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  filter: drop-shadow(0 0 35px rgba(230, 200, 117, 1));
+}
+
+.rocket-lucide-icon {
+  filter: drop-shadow(0 0 22px rgba(255, 220, 130, 0.95));
+}
+
+.rocket-thruster-fire {
+  position: absolute;
+  bottom: -28px;
+  left: -28px;
+  width: 50px;
+  height: 70px;
+  background: linear-gradient(135deg, #ffffff 0%, #ffcc00 30%, #ff4500 70%, transparent 100%);
+  border-radius: 50% 50% 80% 80%;
+  transform: rotate(45deg);
+  filter: blur(4px);
+  animation: thrusterPulse 0.1s infinite alternate;
+}
+
+@keyframes thrusterPulse {
+  0% { transform: rotate(45deg) scale(0.85); opacity: 0.8; }
+  100% { transform: rotate(45deg) scale(1.25); opacity: 1; }
+}
+
+.rocket-flame-glow {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #ffffff 0%, #fef1cc 30%, #e6c875 60%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(10px);
+  animation: pulseFlame 0.15s infinite alternate;
+}
+
+@keyframes pulseFlame {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  100% { transform: scale(1.5); opacity: 1; }
+}
+
+.rocket-trail-particles {
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.trail-sparkle-group {
+  display: flex;
+  gap: 6px;
+  filter: drop-shadow(0 0 12px var(--gold-light));
+}
+
+.rocket-smoke-cloud {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(230, 200, 117, 0.4) 0%, rgba(255, 140, 0, 0.2) 50%, transparent 80%);
+  border-radius: 50%;
+  filter: blur(12px);
+  animation: smokeExpand 0.4s infinite ease-out;
+}
+
+@keyframes smokeExpand {
+  0% { transform: scale(0.5) translate(0, 0); opacity: 0.9; }
+  100% { transform: scale(1.8) translate(-15px, 15px); opacity: 0; }
+}
+
+.venue-map-btn:hover .rocket-icon {
+  transform: rotate(45deg) translate(2px, -2px);
+}
+
+.rocket-trail-sparkles {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.25rem;
+  animation: spinGlow 1s infinite linear;
+}
+
+@keyframes spinGlow {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@media (max-width: 480px) {
+  .venue-action-wrapper {
+    margin-top: 1rem;
+  }
+  .venue-map-btn {
+    max-width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+  }
+}
+
 /* 3D PARALLAX INVITATION CARD SECTION */
 .invitation-parallax-section {
   position: relative;
@@ -1084,20 +1328,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
-  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .invitation-couple-avatar {
-  width: 100px;
-  height: 100px;
+  width: 95px;
+  height: 95px;
   border-radius: 50%;
   border: 2px solid var(--gold-primary);
   padding: 3px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), var(--gold-glow);
   overflow: hidden;
   background: var(--bg-maroon);
+  flex-shrink: 0;
 }
 
 .invitation-couple-avatar img {
@@ -1109,14 +1355,15 @@
 
 .invitation-couple-names {
   text-align: center;
+  flex-shrink: 1;
 }
 
 .invitation-groom, .invitation-bride {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-size: clamp(1.4rem, 4.5vw, 3.2rem);
   font-weight: 800;
-  letter-spacing: 0.1em;
-  line-height: 1.1;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
 }
 
 .invitation-and {
@@ -1125,7 +1372,7 @@
   justify-content: center;
   gap: 0.4rem;
   font-family: var(--font-script);
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
   color: var(--gold-light);
   margin: 0.2rem 0;
 }
@@ -1152,7 +1399,7 @@
 
 .invitation-details-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2.5rem;
 }
@@ -1221,18 +1468,210 @@
 
 @media (max-width: 768px) {
   .invitation-card {
-    padding: 2.25rem 1.25rem 2rem;
+    padding: 1.75rem 0.85rem 1.5rem;
     border-radius: 20px;
   }
   .invitation-couple-row {
-    gap: 1rem;
+    gap: 0.6rem;
+    flex-wrap: nowrap;
+    margin-bottom: 1.5rem;
   }
   .invitation-couple-avatar {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
+    padding: 2px;
+  }
+  .invitation-groom, .invitation-bride {
+    font-size: clamp(1.15rem, 4.8vw, 1.8rem);
+    letter-spacing: 0.05em;
+  }
+  .invitation-and {
+    font-size: 1.3rem;
+  }
+  .invitation-and svg {
+    width: 14px;
+    height: 14px;
+  }
+  .invitation-gold-divider {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+  .invitation-details-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+  .invitation-detail-card {
+    padding: 0.85rem 0.4rem;
+  }
+  .detail-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+  }
+  .detail-value {
+    font-size: 0.82rem;
+    letter-spacing: 0;
   }
   .invitation-venue-box {
     flex-direction: column;
     text-align: center;
+    padding: 1rem 0.75rem;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+  .venue-name {
+    font-size: 0.98rem;
+  }
+  .venue-address {
+    font-size: 0.82rem;
   }
 }
+
+@media (max-width: 480px) {
+  .invitation-card {
+    padding: 1.25rem 0.5rem 1.25rem;
+  }
+  .invitation-couple-row {
+    gap: 0.35rem;
+  }
+  .invitation-couple-avatar {
+    width: 48px;
+    height: 48px;
+  }
+  .invitation-groom, .invitation-bride {
+    font-size: 1.1rem;
+  }
+  .invitation-and {
+    font-size: 1.15rem;
+  }
+}
+
+/* Floating Left-Side Transparent Character Video */
+.character-video-container {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.character-video-container.minimized {
+  transform: scale(0.4) translate(-75%, 75%);
+  opacity: 0.6;
+}
+
+.character-video-container.minimized:hover {
+  opacity: 1;
+  transform: scale(0.6) translate(-35%, 35%);
+}
+
+.hidden-video-source {
+  display: none !important;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.character-canvas-wrapper {
+  position: relative;
+  cursor: pointer;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
+  transition: transform 0.25s ease;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  overflow: hidden;
+  display: block;
+}
+
+.character-canvas-wrapper:hover {
+  transform: scale(1.04);
+}
+
+.character-transparent-canvas {
+  width: 160px;
+  height: auto;
+  max-height: 240px;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  vertical-align: bottom;
+}
+
+.character-controls {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.character-canvas-wrapper:hover .character-controls {
+  opacity: 1;
+}
+
+.character-ctrl-btn {
+  background: rgba(13, 4, 6, 0.8);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.character-ctrl-btn:hover {
+  background: var(--gold-primary);
+  color: #0d0406;
+  transform: scale(1.1);
+}
+
+/* Mobile Responsive Video Overlay */
+@media (max-width: 768px) {
+  .character-video-container {
+    bottom: 0.5rem;
+    left: 0.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  .character-transparent-canvas {
+    width: 80px;
+    max-height: 130px;
+    margin: 0;
+    padding: 0;
+  }
+  .character-controls {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .character-video-container {
+    bottom: 0.4rem;
+    left: 0.4rem;
+  }
+  .character-transparent-canvas {
+    width: 65px;
+    max-height: 105px;
+  }
+}
+

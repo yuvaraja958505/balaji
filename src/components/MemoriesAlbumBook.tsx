@@ -93,7 +93,6 @@ export const MemoriesAlbumBook: React.FC = () => {
                 exit={{ rotateY: -90, opacity: 0 }}
                 transition={{ duration: 0.7 }}
               >
-                <div className="album-ring-binder" />
                 <div className="album-cover-content">
                   <Sparkles size={32} color="var(--gold-primary)" style={{ marginBottom: '0.75rem' }} />
                   <div className="script-font gold-text album-cover-title">
