@@ -35,27 +35,19 @@ export const EventsSchedule: React.FC = () => {
   const events = [
     {
       badge: '12 SEPTEMBER • EVENING',
-      title: 'Sangeet & Mehendi Night',
-      time: '6:00 PM Onwards',
-      location: 'Grand Ballroom, Royal Mandapam',
-      attire: 'Vibrant Traditional / Indo-Western',
-      desc: 'An evening of music, dance, henna artistry, and joyous celebrations.'
+      title: 'Grand Reception',
+      time: '7:00 PM Onwards',
+      location: 'Chinnakallupalli Mandapam, Vaniyambadi',
+      attire: 'Royal Tuxedo & Elegant Gown / Festive Traditional',
+      desc: 'A magnificent feast and royal evening honoring the newlywed couple.'
     },
     {
       badge: '13 SEPTEMBER • MORNING',
       title: 'Kalyana Muhurtham',
       time: '7:30 AM – 9:00 AM',
-      location: 'Main Temple Hall, Royal Mandapam',
+      location: 'Main Temple Hall, Chinnakallupalli Mandapam',
       attire: 'Traditional Silk Saree & Veshti',
       desc: 'The sacred marriage ceremony amidst Vedic chants, garlands, and divine blessings.'
-    },
-    {
-      badge: '13 SEPTEMBER • EVENING',
-      title: 'Grand Reception',
-      time: '7:00 PM Onwards',
-      location: 'Royal Gardens & Convention Center',
-      attire: 'Royal Tuxedo & Elegant Gown',
-      desc: 'A magnificent feast and royal evening honoring the newlywed couple.'
     }
   ]
 

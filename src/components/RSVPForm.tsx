@@ -112,9 +112,9 @@ export const RSVPForm: React.FC = () => {
                 value={formData.events}
                 onChange={e => setFormData({ ...formData, events: e.target.value })}
               >
-                <option value="all">All Events (Sangeet, Muhurtham & Reception)</option>
-                <option value="muhurtham">Muhurtham & Reception Only</option>
-                <option value="reception">Grand Reception Only</option>
+                <option value="all">Both Events (Grand Reception & Kalyana Muhurtham)</option>
+                <option value="reception">Grand Reception Only (12th Sept Evening)</option>
+                <option value="muhurtham">Kalyana Muhurtham Only (13th Sept Morning)</option>
               </select>
             </div>
 
